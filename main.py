@@ -48,7 +48,7 @@ with open(f'posts_{datetime.now().strftime('%Y%m%d%H%M%S')}.txt', 'w', encoding=
             postText = postString[postString.find('text=') + 5:postString.find(',', postString.find('text='))]
             f.write(postText + '\n')
             print(postText)
-            output = postText.replace('\'', '') + '\n\n' + output
+            output = postText.replace('\'', '').replace('\\n','<br />') + '\n\n' + output
 
 # 出力内容確認
 print(output)
